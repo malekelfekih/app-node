@@ -41,7 +41,7 @@ app.put ('/parkings/:id', (req,res) => {
 app.delete('/parkings/:id', (req,res)=> {
     const id = parseInt(req.params.id)
     let parking = parkings.find(parking => parking.id === id)
-    parkings.slice(parkings.indexOf(parking),1)
+    parkings.splice(parkings.indexOf(parking),1)
     res.status(200).json(parkings)
 })
 
