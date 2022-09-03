@@ -1,0 +1,22 @@
+kubernetes apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-express-api-sample
+spec:
+  selector:
+    matchLabels:
+      app: node-express-api-sample
+  template:
+    metadata:
+      labels:
+        app: node-express-api-sample
+    spec:
+      containers:
+      - name: node-express-api-sample
+        image: malekfk/app
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
